@@ -27,10 +27,10 @@ colunas_utilizadas = [
 df = df[[col for col in colunas_utilizadas if col in df.columns]]
 
 # Filtro por estado
-ufs = df["NO_UF"].dropna().unique()
+ufs = df["CO_UF"].dropna().unique()
 estado = st.selectbox("Selecione um estado para análise", sorted(ufs))
 
-df_estado = df[df["NO_UF"] == estado]
+df_estado = df[df["CO_UF"] == estado]
 
 # Gráfico 1: Tipos de unidade no estado
 st.subheader(f"Distribuição por Tipo de Unidade - {estado}")
